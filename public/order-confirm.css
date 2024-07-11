@@ -1,0 +1,14 @@
+table, tr, td{
+    border: 2px solid black;
+    text-align: center;
+}
+.order-summary-table{
+    padding: 20px;
+    margin-left: 20px;
+}
+.order-summary-table tr{
+    margin-left: 20px;
+}
+.order-summary-table th{
+    text-align: left;
+}

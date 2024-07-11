@@ -1,0 +1,267 @@
+@font-face {
+    font-family: "Ranade Variable";
+    src: url("Ranade-Variable.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Cabinet Grotesk";
+    src: url("CabinetGrotesk-Variable.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Cabinet Grotesk";
+    src: url("CabinetGrotesk-Variable.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Chillax Variable";
+    src: url("Chillax-Variable.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "CabinetGrotesk";
+    src: url("CabinetGrotesk-Variable.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "CabinetGroteskVariable";
+    src: url("public/CabinetGrotesk-Variable.ttf");
+    font-weight: 700;
+}
+.a1 {
+    text-decoration: none;
+}
+
+.get-started-child {
+    width: 84.7px;
+    height: 84.7px;
+    position: relative;
+}
+
+.campusbites {
+    color: var(--color);
+}
+
+.welcome-to-campusbites-container {
+    margin: 0;
+    width: 548px;
+    height: 56px;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.satisfy-your-cravings {
+    align-self: stretch;
+    height: 70px;
+    position: relative;
+    font-size: 28px;
+    font-weight: 300;
+    font-family: var(--font-cabinet-grotesk);
+    display: inline-block;
+}
+
+.welcome-to-campusbites-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+}
+
+.frame-child {
+    height: 57.8px;
+    width: 250px;
+    position: relative;
+    border-radius: var(--br-xl);
+    background-color: var(--color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+.get-started1 {
+    height: 33px;
+    width: 145px;
+    position: relative;
+    font-size: var(--font-size-5xl);
+    display: inline-block;
+    font-family: var(--font-ranade-variable);
+    color: var(--color-white);
+    text-align: left;
+    z-index: 1;
+}
+
+.right-arrow-1-icon {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.rectangle-parent {
+    cursor: pointer;
+    border: none;
+    padding: var(--padding-sm) 35px var(--padding-3xs) var(--padding-19xl);
+    background-color: var(--color);
+    border-radius: var(--br-xl);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.rectangle-parent:hover {
+    background-color: var(--color-chocolate);
+}
+
+.frame-parent {
+    width: 793px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 39px;
+    max-width: 100%;
+    flex-shrink: 0;
+    text-align: left;
+    font-size: 40px;
+    color: var(--color-white);
+    font-family: var(--font-chillax-variable);
+}
+
+.get-started {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-xl) 40px;
+    box-sizing: border-box;
+    gap: 100px;
+    letter-spacing: normal;
+    background-image: url("/Res/front-view-burger-with-french-fries.jpg");
+    background-size: cover;
+    background-position-y: center;
+    height: 100vh;
+}
+
+@media screen and (max-width: 900px) {
+    .welcome-to-campusbites-container {
+        font-size: 32px;
+    }
+
+    .get-started {
+        gap: 100px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .welcome-to-campusbites-container {
+        font-size: var(--font-size-5xl);
+    }
+
+    .satisfy-your-cravings {
+        font-size: 22px;
+    }
+
+    .frame-parent {
+        gap: 100px;
+    }
+
+    .get-started {
+        gap: 100px;
+    }
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+  
+  }
+  
+  :root {
+    /* fonts */
+    --font-ranade-variable: "Ranade Variable";
+    --font-cabinet-grotesk: "Cabinet Grotesk";
+    --font-chillax-variable: "Chillax Variable";
+  
+    --font-montserrat: Montserrat;
+    --font-cabinet-grotesk-variable: "Cabinet Grotesk Variable";
+  
+  
+    /* font sizes */
+    --font-size-5xl: 24px;
+  
+    --font-size-lgi: 19px;
+    --font-size-base: 16px;
+    --font-size-xl: 20px;
+    --font-size-29xl: 48px;
+  
+    --font-size-10xl: 29px;
+    --font-size-19xl: 38px;
+    --font-size-5xl: 24px;
+    --font-size-base: 16px;
+  
+    /* Colors */
+    --color: #f48c06;
+  
+    --color-chocolate: #c25900;
+    --color-white: #fff;
+    --color-gray-200: rgba(255, 255, 255, 0.5);
+  
+    --color-gray-100: rgba(255, 255, 255, 0.8);
+    --color-gray-200: rgba(255, 255, 255, 0.5);
+  
+    /* Gaps */
+    --gap-xl: 20px;
+    --gap-mini: 15px;
+    --gap-34xl: 53px;
+    --gap-7xl: 26px;
+  
+  
+    /* Paddings */
+    --padding-lg: 18px;
+    --padding-xl: 20px;
+    --padding-sm: 14px;
+    --padding-3xs: 10px;
+    --padding-19xl: 38px;
+    --padding-22xl: 41px;
+    --padding-45xl: 64px;
+    --padding-41xl: 60px;
+    --padding-11xl: 30px;
+    --padding-13xl: 32px;
+  
+    --padding-5xs: 8px;
+    --padding-4xs: 9px;
+    --padding-4xl: 23px;
+  
+    --padding-mini: 15px;
+    --padding-base: 16px;
+    --padding-169xl: 188px;
+    --padding-46xl: 65px;
+    --padding-2xs: 11px;
+    --padding-48xl: 67px;
+  
+  
+    /* Border radiuses */
+    --br-xl: 20px;
+    --br-6xs: 7px;
+    --br-mini: 15px;
+  
+  }
+  

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusBites</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="icon" href="/Res/logo.png">
+   
+  </head>
+  <body>
+    <h1>Verify here to order yummy food!!</h1>
+    <form class="otp-form" id="otp-form">
+      <label for="Email">Email</label>
+      <input type="email" id="Email" name="email" required placeholder="Your email" />
+      <button class="send-otp-btn" type="button" onclick="sendOtp()">Send OTP</button>
+      <div id="otp-section" style="display: none;">
+        <label for="Otp">OTP</label>
+        <input type="text" id="Otp" name="otp" required placeholder="Enter OTP"/>
+        <button class="verify-otp-btn" type="button" onclick="verifyOtp()">Verify OTP</button>
+      </div>
+    </form>
+
+    <!-- Custom Alert Box -->
+    <div class="overlay" id="overlay"></div>
+    <div class="custom-alert" id="custom-alert">
+      <p id="alert-message"></p>
+      <button onclick="closeAlert()">OK</button>
+    </div>
+
+    <script>
+      function showAlert(message) {
+        document.getElementById("alert-message").innerText = message;
+        document.getElementById("overlay").style.display = 'block';
+        document.getElementById("custom-alert").style.display = 'block';
+      }
+
+      function closeAlert() {
+        document.getElementById("overlay").style.display = 'none';
+        document.getElementById("custom-alert").style.display = 'none';
+      }
+
+      function sendOtp() {
+        const email = document.getElementById("Email").value;
+        fetch("/send-otp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `email=${email}`,
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            showAlert(data);
+            if (data === "OTP sent") {
+              document.getElementById("otp-section").style.display = "block";
+              document.getElementById("Otp").focus();
+            }
+          })
+          .catch((error) => {
+            showAlert("Error sending OTP");
+          });
+      }
+
+      function verifyOtp() {
+        const otp = document.getElementById("Otp").value;
+        fetch("/verify-otp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `otp=${otp}`,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.verified) {
+              showAlert("OTP verified! Redirecting...");
+              setTimeout(() => {
+                window.location.href = "/dineat/110/tables"; 
+              }, 2000);
+            } else {
+              showAlert("Invalid OTP");
+            }
+          })
+          .catch((error) => {
+            showAlert("Error verifying OTP");
+          });
+      }
+    </script>
+  </body>
+</html>

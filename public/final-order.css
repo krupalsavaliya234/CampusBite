@@ -1,0 +1,135 @@
+body {
+    height: 100%;
+    overflow-y: hidden;
+    background: url(Res/backimg.jpg);
+    background-size: cover;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(/Res/GeneralSans-Variable.ttf);
+
+}
+
+.final-order-table {
+    width: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-bottom: 20px;
+    font-family: myFont;
+    margin-left: 25%;
+}
+
+h2 {
+    font-family: myFont;
+}
+
+thead {
+    background-color: #6A040F;
+    color: white;
+}
+
+tbody {
+    background-color: #FFBA08;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+}
+
+th,
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+
+tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tr:first-child th:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+tr:first-child th:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+tr:first-child td:first-child {
+    border-top-left-radius: 8px;
+}
+
+tr:first-child td:last-child {
+    border-top-right-radius: 8px;
+}
+
+tr:first-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+tr:first-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    width: 20%;
+    height: 40px;
+    margin-left: 40%;
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all .2s;
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: #D00000;
+}
+
+@media screen and (max-width: 20%) {
+    .final-order-table {
+        overflow-x: scroll;
+        display: block;
+    }
+}
+    
+.img-container img {
+    max-width: 200px;
+    height: 200px;
+}
+
+.img-container {
+    display: flex;
+}
+
+.img-container p {
+    font-size: 40px;
+    font-family: myFont;
+    color: #370617;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.img-container span {
+    color: #6A040F;
+    font-size: 38px;
+}

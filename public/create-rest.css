@@ -1,0 +1,105 @@
+    .rest-container {
+    height: auto;
+    width: 50%;
+    margin-top: 10%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 25%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: myFont;
+}
+@font-face{
+    font-family: myFont;
+    src:url(/Res/GeneralSans-Variable.ttf);
+}
+
+body {
+    background: hsla(42, 93%, 57%, 1);
+
+    background: linear-gradient(180deg, hsla(42, 93%, 57%, 1) 0%, hsla(0, 100%, 98%, 1) 100%);
+
+    background: -moz-linear-gradient(180deg, hsla(42, 93%, 57%, 1) 0%, hsla(0, 100%, 98%, 1) 100%);
+
+    background: -webkit-linear-gradient(180deg, hsla(42, 93%, 57%, 1) 0%, hsla(0, 100%, 98%, 1) 100%);
+
+
+}
+
+.addcanteen {
+    margin-top: 20px;
+    flex-wrap: wrap;
+
+}
+
+.canteenname_input {
+    margin: 30px;
+    width: 80%;
+
+}
+
+.addcanteen button {
+    width: 40%;
+
+}
+
+.addcanteen input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid black;
+
+}
+
+.addcanteen input:focus {
+    outline: none;
+    border-bottom: 2px solid #e9d416;
+    /* Adjust the color and thickness as needed */
+
+}
+
+.rest-container h3 {
+    margin-top: 20px;
+}
+
+.canteenname_input:focus {
+    border: none;
+}
+
+.button-32 {
+    background-color: #fff000;
+    border-radius: 12px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    transition: 200ms;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: myFont;
+
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+    outline: 0;
+    background: #f4e603;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
+}
+
+.button-32:disabled {
+    filter: saturate(0.2) opacity(0.5);
+    -webkit-filter: saturate(0.2) opacity(0.5);
+    cursor: not-allowed;
+}
+
+input[type="number"] {
+    text-align: center;
+    /* Center the text horizontally */
+}

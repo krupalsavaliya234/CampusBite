@@ -1,0 +1,79 @@
+body{
+    background: hsla(42, 93%, 57%, 1);
+
+background: linear-gradient(180deg, hsla(42, 93%, 57%, 1) 0%, hsla(0, 100%, 98%, 1) 100%);
+
+background: -moz-linear-gradient(180deg, hsla(42, 93%, 57%, 1) 0%, hsla(0, 100%, 98%, 1) 100%);
+
+background: -webkit-linear-gradient(180deg, hsla(42, 93%, 57%, 1) 0%, hsla(0, 100%, 98%, 1) 100%);
+
+
+} 
+@font-face{
+  font-family: myFont;
+  src:url(/Res/GeneralSans-Variable.ttf);
+}  
+.container1{
+    height: auto;
+    width: 50%;
+    margin: 200px;
+    background-color: white
+    ;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    margin-left: 25%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: myFont;
+
+}
+.form-container{
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.form-container input{
+    margin: 30px;
+    width: 70%;
+    text-align: center;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid black;
+   
+}
+.form-container input:focus{
+    outline: none;
+    border-bottom: 2px solid #e9d416;
+}
+.form-container button{
+    background-color: #fff000;
+    border-radius: 12px;
+    width: 40%;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    transition: 200ms;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.btn2:not(:disabled):hover,
+  .btn2:not(:disabled):focus {
+    outline: 0;
+    background: #f4e603;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+  }
+  
+  .btn2:disabled {
+    filter: saturate(0.2) opacity(0.5);
+    -webkit-filter: saturate(0.2) opacity(0.5);
+    cursor: not-allowed;
+  }
+  input[type="number"] {
+    text-align: center; /* Center the text horizontally */
+  }

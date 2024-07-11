@@ -1,0 +1,55 @@
+
+<title>CampusBites | Dashboard</title>
+<link rel="stylesheet" href="/dashboard.css">
+
+<%- include("../restaurant/partials/navbar.ejs")%>
+    <h2 style="color:black; margin-left:8%; margin-top: 10px;">Total Orders : <%=openOrders.length%>
+    </h2>
+    <div class="content">
+      <div class="orders ml-4" style="display: flex; flex-wrap: wrap">
+        <% for (order of openOrders) {%>
+          <div class="card m-4">
+            <h4 class="table-number" style="text-align: center">
+            Table: <%=order.tableNumber%>
+            </h4>
+            <div class="card-body">
+              <table class="order-table">
+                <tr>
+                  <td>NAME</td>
+                  <td>PRICE</td>
+                  <td>x</td>
+                  <td>QTY</td>
+                </tr>
+                <% total=0 %>
+                  <% for (item of order.items) { %>
+                    <% if(item.qty>0){ %>
+                      <tr>
+                        <td>
+                          <%=item.menuName%>
+                        </td>
+                        <td>
+                          <%=item.menuPrice%>
+                        </td>
+                        <td>x</td>
+                        <td>
+                          <%=item.qty%>
+                        </td>
+                        <%total=total+ (item.menuPrice*item.qty) %>
+                      </tr>
+                      <% } %>
+                        <% } %>
+              </table>
+            </div>
+            <form class="complete-order-form" method="POST" action="dashboard/order-processed">
+              <h4>Total: <%=total%>
+              </h4>
+              <input name="orderId" type="hidden" value="<%=order._id%>" />
+              <button class="button-5" role="button">Complete Order</button>
+            </form>
+          </div>
+          <% } %>
+      </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+// const mongoose = require("mongoose");
+
+// async function main(){
+//     await mongoose.connect("mongodb://localhost:27017/campusbite").then(console.log("data connected"));
+// }
+// main().then(()=>{
+//     console.log("connected to db");
+// }).catch((err)=>{
+//     console.log(err);
+// });
+
+// const menuSchema = new mongoose.Schema({
+//     name: String,
+//     description: String,
+//     price: Number,
+//   });
+  
+//   const menu = mongoose.model("menu",menuSchema);
+//   module.exports = menu;
+

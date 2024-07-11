@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusBites | Make Order</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/create-order.css" />
+    <link rel="icon" href="/Res/logo.png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light order-navbar">
+      <a class="navbar-brand" href="#">CampusBites</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Your Orders</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="create-order-container">
+      <form
+        class="order-form"
+        method="POST"
+        class="quantity"
+        action="/dineat/<%=restId%>/table/<%=tableNum%>/create-order"
+      >
+        <div class="container">
+          <% for (const [index,menu] of menus.entries()) { %>
+
+          <div class="order-box m-4">
+            <img
+              src="/uploads/<%=menu.image%>"
+              alt="<%=menu.image %>"
+              width="100px"
+              height="100px"
+            />
+            <div class="order-detail">
+              <span> <strong> <%=menu.name%> </strong></span>
+              <span
+                ><strong>₹ </strong>
+                <%=menu.price%>
+              </span>
+
+              <div class="qty-button">
+                <button type="button" class="qtyminus minus" field="quantity">
+                  -
+                </button>
+                <input type="text" name="<%=menu._id%>" value="0" class="qty" />
+                <button type="button" class="qtyplus plus" field="quantity">
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          <br />
+          <% } %>
+        </div>
+        <button class="button-87">Place your order</button>
+      </form>
+    </div>
+
+    <script>
+      jQuery(document).ready(($) => {
+        $('.order-box').on('click', '.qtyplus', function (e) {
+          e.preventDefault();
+          let $input = $(this).siblings('input.qty');
+          let val = parseInt($input.val());
+          $input.val(val + 1).change();
+        });
+    
+        $('.order-box').on('click', '.qtyminus', function (e) {
+          e.preventDefault();
+          let $input = $(this).siblings('input.qty');
+          var val = parseInt($input.val());
+          if (val > 0) {
+            $input.val(val - 1).change();
+          }
+        });
+      });
+    </script>
+    
+  </body>
+</html>

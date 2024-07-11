@@ -1,0 +1,44 @@
+<title>CampusBites| Order History</title>
+<%- include("../restaurant/partials/navbar.ejs")%>
+<link rel="stylesheet" href="/order-history.css"/>
+<div class="order-history-title-container">
+  <h3>Order History</h3>
+  <h5>Total Orders - <%=completedOrders.length%></h5>
+</div>
+
+<div class="content">
+  <div class="orders" style="display: flex">
+    <% for (order of completedOrders) { %>
+      <% if (order.items.length > 0) { %>
+        <div class="order">
+          <div class="summary">
+            <table style="margin-left: 5px; margin-right: 5px">
+              <tr>
+                <td>NAME</td>
+                <td>PRICE</td>
+                <td>x</td>
+                <td>QTY</td>
+              </tr>
+              <% total = 0 %>
+              <% for (item of order.items) { %>
+                <tr>
+                  <td><%= item.menuName %></td>
+                  <td><%= item.menuPrice %></td>
+                  <td>x</td>
+                  <td><%= item.qty %></td>
+                  <% total = total + (item.menuPrice * item.qty) %>
+                </tr>
+              <% } %>
+            </table>
+          </div>
+          <div>
+            <h4>Total: <%= total %></h4>
+          </div>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+  <span>
+    <a href="/restaurant/<%= restId %>/dashboard"><button class="button-32">Back to Dashboard</button></a>
+  </span>
+</div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusBites| Order Confirmed</title>
+    <link rel="stylesheet" href="/final-order.css" />
+    <link rel="icon" href="/Res/logo.png">
+</head>
+<body>
+    <h2 style="color:#370617; margin-left: 35%;">Your order placed successfully!!</h2>
+    <div class="summary">
+        <table class="final-order-table">
+            <thead>
+                <tr class="heading-row">
+                    <th><strong>NAME</strong></th>
+                    <th><strong>PRICE</strong></th>
+                    <th><strong></strong></th>
+                    <th><strong>QTY</strong></th>
+                    <th><strong>SUBTOTAL</strong></th>
+                </tr>
+            </thead>
+            <% total=0 %>
+                <% for (item of ord) { %>
+                    <tbody>
+                        <tr>
+                            <% if(item.qty>0) { %>
+                                <td>
+                                    <%=item.menuName%>
+                                </td>
+                                <td>
+                                    <%=item.menuPrice%>
+                                </td>
+                                <td>x</td>
+                                <td>
+                                    <%=item.qty%>
+                                </td>
+                                <td><strong>
+                                        <%=item.menuPrice*item.qty%>
+                                    </strong></td>
+                                <% } %>
+                        </tr>
+                    </tbody>
+                    <% total=total+(item.menuPrice*item.qty) %>
+                        <% } %>
+        </table>
+
+    </div>
+    <div>
+    </div>
+
+    <a href="/dineat/<%=restId%>/table/<%=tableNum%>/create-order"><button class="btn">
+
+            Go to Home
+        </button></a>
+
+    <div class="img-container">
+        <img src="/Res/2.png" alt="food">
+        <p>Your food's in the works, fam! <span> Get ready to taste the magic, straight outta the kitchen!</span>
+        </p>
+    </div>
+</body>
+
+</html>
